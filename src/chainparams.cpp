@@ -54,10 +54,10 @@ static void convertSeed6(std::vector<CAddress>& vSeedsOut, const SeedSpec6* data
 // + Contains no strange transactions
 static Checkpoints::MapCheckpoints mapCheckpoints =
     boost::assign::map_list_of
-    (0, uint256("0x001"));
+    (0, uint256("0x00000584c31801a98bfe59e888b8dbfc8375887fa917b80807fe5019f302d369"));
 static const Checkpoints::CCheckpointData data = {
     &mapCheckpoints,
-    1514540176, // * UNIX timestamp of last checkpoint block
+    1522015694, // * UNIX timestamp of last checkpoint block
     0,    // * total number of transactions between genesis and last checkpoint
                 //   (the tx=... number in the SetBestChain debug.log lines)
     2000        // * estimated number of transactions per day after checkpoint
@@ -180,18 +180,19 @@ public:
         genesis.hashPrevBlock = 0;
         genesis.hashMerkleRoot = genesis.BuildMerkleTree();
         genesis.nVersion = 1;
-        genesis.nTime = 1518537207;
+        genesis.nTime = 1522015694;
         genesis.nBits = 0x1e0ffff0;
-        genesis.nNonce = 0;
+        genesis.nNonce = 494636;
 
+	    MineGenesis(genesis, bnProofOfWorkLimit);
 		
         hashGenesisBlock = genesis.GetHash();
-        assert(hashGenesisBlock == uint256("0x"));
-        assert(genesis.hashMerkleRoot == uint256("0x"));
+        assert(hashGenesisBlock == uint256("0x00000584c31801a98bfe59e888b8dbfc8375887fa917b80807fe5019f302d369"));
+        assert(genesis.hashMerkleRoot == uint256("0x7d67e1744f7f2a5d0fbd7792a0d87c7be0e9f5550bed147678b6cb0f80c5f90d"));
 
         vSeeds.push_back(CDNSSeedData("207.148.83.99", "207.148.83.99"));         // Elastic IP / DNS address
        
-        base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1, 80);
+        base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1, 73);
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1, 21);
         base58Prefixes[SECRET_KEY] = std::vector<unsigned char>(1, 232);
         base58Prefixes[EXT_PUBLIC_KEY] = boost::assign::list_of(0x05)(0x4D)(0x21)(0x73).convert_to_container<std::vector<unsigned char> >();
