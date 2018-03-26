@@ -184,7 +184,7 @@ public:
         genesis.nBits = 0x1e0ffff0;
         genesis.nNonce = 494636;
 
-	    MineGenesis(genesis, bnProofOfWorkLimit);
+	    //MineGenesis(genesis, bnProofOfWorkLimit);
 		
         hashGenesisBlock = genesis.GetHash();
         assert(hashGenesisBlock == uint256("0x00000584c31801a98bfe59e888b8dbfc8375887fa917b80807fe5019f302d369"));
@@ -203,7 +203,7 @@ public:
         convertSeed6(vFixedSeeds, pnSeed6_main, ARRAYLEN(pnSeed6_main));
 
         fRequireRPCPassword = true;
-        fMiningRequiresPeers = true;
+        fMiningRequiresPeers = false;
         fAllowMinDifficultyBlocks = false;
         fDefaultConsistencyChecks = false;
         fRequireStandard = true;
